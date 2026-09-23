@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.svg" alt="envoke" width="392">
+</p>
+
 # envoke (`secrets-entrypoint`)
 
 A single static Go binary that replaces the classic shell-based Kubernetes
