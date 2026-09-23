@@ -47,10 +47,11 @@ func main() {
 		os.Exit(2)
 	}
 
-	if err := run(cfg, cmdArgs); err != nil {
-		fmt.Fprintln(os.Stderr, "secrets-entrypoint:", err)
-		os.Exit(1)
-	}
+	// run only returns on failure -- on success it has already execve'd
+	// into the target command.
+	err = run(cfg, cmdArgs)
+	fmt.Fprintln(os.Stderr, "secrets-entrypoint:", err)
+	os.Exit(1)
 }
 
 func parseFlags(args []string) (*settings, []string, error) {

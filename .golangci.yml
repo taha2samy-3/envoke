@@ -1,0 +1,7 @@
+version: "2"
+
+linters:
+  exclusions:
+    # Unchecked Close/Fprint*/Setenv etc. -- the usual Go idiom.
+    presets:
+      - std-error-handling

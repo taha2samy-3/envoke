@@ -213,7 +213,7 @@ func TestPostEventRequest(t *testing.T) {
 func TestPostEventRequestNonSuccessStatus(t *testing.T) {
 	srv := httptest.NewTLSServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusForbidden)
-		w.Write([]byte(`{"message":"forbidden"}`))
+		_, _ = w.Write([]byte(`{"message":"forbidden"}`))
 	}))
 	defer srv.Close()
 
