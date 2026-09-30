@@ -19,7 +19,7 @@
 # (linux/amd64, linux/arm64, ...) fast here. BUILDPLATFORM/TARGETOS/
 # TARGETARCH are set automatically by `docker buildx build --platform`.
 # ---------------------------------------------------------------------
-FROM --platform=$BUILDPLATFORM golang:1.26-alpine AS builder
+FROM --platform=$BUILDPLATFORM golang:1.27-alpine AS builder
 
 
 # Deliberately no default value here: buildx injects the real target
