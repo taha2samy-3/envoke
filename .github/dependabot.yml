@@ -7,8 +7,9 @@ updates:
     commit-message:
       prefix: "deps(go)"
     groups:
-      go-modules:
+      non-major:
         patterns: ["*"]
+        update-types: ["minor", "patch"]
 
   - package-ecosystem: github-actions
     directory: /
@@ -17,8 +18,9 @@ updates:
     commit-message:
       prefix: "ci"
     groups:
-      github-actions:
+      non-major:
         patterns: ["*"]
+        update-types: ["minor", "patch"]
 
   - package-ecosystem: docker
     directory: /
@@ -26,3 +28,7 @@ updates:
       interval: weekly
     commit-message:
       prefix: "deps(docker)"
+    groups:
+      non-major:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]

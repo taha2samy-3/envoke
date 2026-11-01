@@ -44,6 +44,11 @@ jobs:
         with:
           version: latest
 
+      - name: govulncheck
+        uses: golang/govulncheck-action@v1
+        with:
+          go-version-file: go.mod
+
   build:
     name: Build (${{ matrix.goarch }})
     runs-on: ubuntu-latest
